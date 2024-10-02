@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "canela";
+  src: url("./fonts/Canela-Thin.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  background-color: #111111;
+  color: #111111;
+  overflow: hidden;
+}
+
+.first-name,
+.last-name {
+  position: relative;
+  display: inline-block;
+  color: #f0f0f0;
+}
+
+.color-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vh;
+  height: 0;
+  background-color: #f0f0f0;
+  z-index: -1;
+}
+
+.circle-container {
+  position: relative;
+  display: inline-block;
+}
+
+.circle-svg {
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  width: 110%;
+  height: 140%;
+  fill: none;
+  stroke: #111111;
+  stroke-width: 1;
+  stroke-dasharray: 1259;
+  stroke-dashoffset: 1259;
+  filter: url(#fuzzy);
+  z-index: 1;
+}
+
+.intro-section {
+  font-family: "canela";
+  font-size: 40px;
+  line-height: 1.4;
+  font-weight: 500;
+  padding: 32px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+span {
+  display: inline-block;
+}
+
+.email-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.underline {
+  display: inline-block;
+  width: 98%;
+  height: 0.5px;
+  background-color: #111111;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.intro-word {
+  margin-right: 5px;
+}
+
+.made-in {
+  display: flex;
+}
+
+.location-container {
+  position: relative;
+}
+
+.brittany-letters,
+.lorient-letters {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.circle-text {
+  position: absolute;
+  bottom: 0;
+}
+
+svg {
+  width: 250px; /* Ajuste selon tes besoins */
+  height: 250px;
+}
+
+text {
+  font-size: 14px; /* Ajusteselon tes besoins */
+  fill: #111111;
+  letter-spacing: 3px;
+}
+
+.presentation-image {
+  perspective: 1000px; /* Ajoute une perspective 3D */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stacks-image {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s;
+  transform: rotateY(10deg) rotateX(10deg); /* Applique une rotation 3D initiale */
+}
+
+.stacks-image img {
+  width: 250px; /* Ajustez la taille selon vos besoins */
+  transition: transform 0.3s, filter 0.3s; /* Ajoutez le filter à la transition */
+  transform: rotateY(10deg) rotateX(10deg); /* Applique une rotation 3D initiale */
+  filter: drop-shadow(0 20px 15px rgba(0, 0, 0, 0.3)); /* Ombre portée */
+}
