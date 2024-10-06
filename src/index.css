@@ -7,4 +7,8 @@
     font-family: "canela";
     src: url("./fonts/Canela-Thin.ttf");
   }
+  @font-face {
+    font-family: "safiro";
+    src: url("./fonts/safiro-medium.otf");
+  }
 }

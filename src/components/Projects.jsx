@@ -1,96 +1,53 @@
 import { useGSAP } from "@gsap/react";
-import { useEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
-  useEffect(() => {
-    const handleMouseEnter = () => {
-      gsap.to("circle", {
-        strokeDashoffset: 95,
-        strokeDasharray: 95,
-        duration: 2,
-        ease: "power2.inOut",
-      });
+  useGSAP(() => {
+    let sections = gsap.utils.toArray(".pr_client");
+    let endValue = window.innerHeight * sections.length; // La hauteur totale des sections
 
-      gsap.to("path", {
-        strokeDashoffset: 0,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power2.inOut",
-      });
-    };
-    const handleMouseLeave = () => {
-      gsap.to("circle", {
-        strokeDashoffset: 0,
-        strokeDasharray: 0,
-        duration: 2,
-        ease: "power2.inOut",
-      });
-
-      gsap.to(".arrow-body", {
-        strokeDashoffset: 58,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power2.inOut",
-      });
-      gsap.to(".arrow-head", {
-        strokeDashoffset: 21,
-        duration: 1.5,
-        stagger: 0.3,
-        ease: "power2.inOut",
-      });
-    };
-    const buttonElement = document.querySelector(".experiences-image");
-    buttonElement.addEventListener("mouseenter", handleMouseEnter);
-    buttonElement.addEventListener("mouseleave", handleMouseLeave);
-  }, []); // [] assure que l'effet ne s'exécute qu'une seule fois
-
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".mp_item",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
+        end: `+=${endValue}`,
+        markers: true, // À garder pour le débogage, à retirer en production
+        onUpdate: (self) => {
+          const progress = self.progress.toFixed(2);
+          gsap.to(".spanEl", {
+            yPercent: -100 * progress * (sections.length - 1),
+          });
+        },
+      },
+    });
+  });
   return (
     <>
-      <div className="experiences-image cursor-pointer flex justify-center absolute bottom-[5vw] right-[100px]">
-        <div className="">
-          <img
-            src="src/assets/50721.jpg"
-            className="rounded-xl w-[28vw] rotate-6"
-          ></img>
+      <section className="mp_item flex w-full font-['safiro'] overflow-x-hidden">
+        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
+          <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
+          SCROLL DOWN
         </div>
-        <div className="relative">
-          <svg
-            height="32"
-            width="32"
-            viewBox="0 0 42 42"
-            className="absolute bottom-11 -right-9"
-          >
-            <circle
-              className="stroke-[#111111] [stroke-dasharray:0] [stroke-dashoffset:0] stroke-1"
-              fill="none"
-              r="20"
-              cx="21"
-              cy="21"
-            ></circle>
-          </svg>
-          <svg
-            height="40"
-            width="40"
-            viewBox="0 0 42 42"
-            className="absolute bottom-6 -right-6
-            "
-          >
-            <path
-              d="M21 .5h20.5"
-              className="arrow-head stroke-[#111111] [stroke-dasharray:16] [stroke-dashoffset:21]"
-            ></path>
-            <path
-              d="M41 0.5v20.5"
-              className="arrow-head stroke-[#111111] [stroke-dasharray:30] [stroke-dashoffset:21]"
-            ></path>
-            <path
-              d="M.5 41 41 .5"
-              className="arrow-body stroke-[#111111] [stroke-dasharray:58] [stroke-dashoffset:58]"
-            ></path>
-          </svg>
+        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
+          <span className="pr_num mb-16 text-lg tracking-normal">(02)</span>
+          ABOUT ME
         </div>
-      </div>
+        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
+          <span className="pr_num mb-16 text-lg tracking-normal">(03)</span>
+          TOOLBOX
+        </div>
+        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
+          <span className="pr_num mb-16 text-lg tracking-normal">(04)</span>
+          PROJECTS
+        </div>
+      </section>
     </>
   );
 }

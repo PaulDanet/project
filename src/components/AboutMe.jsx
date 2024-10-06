@@ -1,18 +1,16 @@
-import { useGSAP } from "@gsap/react";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 
 export default function AboutMe() {
   useEffect(() => {
     const handleMouseEnter = () => {
-      gsap.to("circle", {
-        strokeDashoffset: 95,
-        strokeDasharray: 95,
+      gsap.to(".aboutMe-circle", {
+        strokeDashoffset: 126,
         duration: 2,
         ease: "power2.inOut",
       });
 
-      gsap.to("path", {
+      gsap.to(".aboutMe-arrowHeadH, .aboutMe-arrowHeadV, .aboutMe-arrowBody", {
         strokeDashoffset: 0,
         duration: 1.5,
         stagger: 0.3,
@@ -20,38 +18,43 @@ export default function AboutMe() {
       });
     };
     const handleMouseLeave = () => {
-      gsap.to("circle", {
+      gsap.to(".aboutMe-circle", {
         strokeDashoffset: 0,
-        strokeDasharray: 0,
         duration: 2,
         ease: "power2.inOut",
       });
 
-      gsap.to(".arrow-body", {
+      gsap.to(".aboutMe-arrowBody", {
         strokeDashoffset: 58,
         duration: 1.5,
         stagger: 0.3,
         ease: "power2.inOut",
       });
-      gsap.to(".arrow-head", {
-        strokeDashoffset: 21,
+      gsap.to(".aboutMe-arrowHeadH", {
+        strokeDashoffset: 29,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power2.inOut",
+      });
+      gsap.to(".aboutMe-arrowHeadV", {
+        strokeDashoffset: 13,
         duration: 1.5,
         stagger: 0.3,
         ease: "power2.inOut",
       });
     };
-    const buttonElement = document.querySelector(".experiences-image");
+    const buttonElement = document.querySelector(".aboutMe-image");
     buttonElement.addEventListener("mouseenter", handleMouseEnter);
     buttonElement.addEventListener("mouseleave", handleMouseLeave);
   }, []); // [] assure que l'effet ne s'exécute qu'une seule fois
 
   return (
     <>
-      <div className="experiences-image cursor-pointer flex justify-center absolute bottom-[13vw] left-[150px]">
+      <div className="aboutMe-image cursor-pointer flex justify-center absolute bottom-[10vw] left-[180px]">
         <div className="">
           <img
             src="src/assets/50721.jpg"
-            className="rounded-xl  w-[28vw] -rotate-[85deg]"
+            className="rounded-xl  w-[18vw] -rotate-[85deg]"
           ></img>
         </div>
         <div className="relative">
@@ -62,7 +65,7 @@ export default function AboutMe() {
             className="absolute bottom-[68px] right-1"
           >
             <circle
-              className="stroke-[#111111] [stroke-dasharray:0] [stroke-dashoffset:0] stroke-1"
+              className="aboutMe-circle stroke-[#111111] -rotate-90 origin-center [stroke-dasharray:126] [stroke-dashoffset:0] stroke-1"
               fill="none"
               r="20"
               cx="21"
@@ -76,16 +79,16 @@ export default function AboutMe() {
             className="absolute bottom-12 right-4"
           >
             <path
-              d="M21 .5h20.5"
-              className="arrow-head stroke-[#111111] [stroke-dasharray:16] [stroke-dashoffset:21]"
+              d="M21 0.5h20.5"
+              className="aboutMe-arrowHeadH stroke-[#111111] [stroke-dasharray:21] [stroke-dashoffset:29]"
             ></path>
             <path
               d="M41 0.5v20.5"
-              className="arrow-head stroke-[#111111] [stroke-dasharray:30] [stroke-dashoffset:21]"
+              className="aboutMe-arrowHeadV stroke-[#111111] [stroke-dasharray:21] [stroke-dashoffset:13]"
             ></path>
             <path
               d="M.5 41 41 .5"
-              className="arrow-body stroke-[#111111] [stroke-dasharray:58] [stroke-dashoffset:58]"
+              className="aboutMe-arrowBody stroke-[#111111] [stroke-dasharray:58] [stroke-dashoffset:58]"
             ></path>
           </svg>
         </div>

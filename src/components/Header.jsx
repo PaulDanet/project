@@ -15,7 +15,7 @@ export default function Header() {
 
     // Animation de l'invasion de couleur
     gsap.to(".color-bg", {
-      height: "100vh",
+      height: "0vh",
       duration: 1,
       delay: 1,
       ease: "power3.in",
@@ -134,8 +134,8 @@ export default function Header() {
   });
   return (
     <>
-      <div className="color-bg absolute bottom-0 left-0 w-screen h-0 bg-[#f0f0f0] -z-10"></div>
-      <div className="intro-section font-['canela'] text-[5vw] leading-normal font-medium">
+      <div className="color-bg absolute top-0 left-0 w-screen h-screen bg-[#111111] -z-10"></div>
+      <div className="intro-section fixed font-['canela'] text-[4vw] leading-normal font-extralight z-20 p-12">
         <div>
           <span className="intro-word mr-1.5">Web </span>
           <span className="intro-word mr-1.5">Developer </span>

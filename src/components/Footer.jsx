@@ -1,52 +1,103 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   useGSAP(() => {
-    // Animation texte cercle intro
-    gsap.fromTo(
-      ".circle-text",
-      {
-        y: "100%",
-        x: "-100%",
+    let spans = gsap.utils.toArray(".spanEl");
+    let endValue = window.innerHeight; // Ajuster selon la hauteur du scroll
+    gsap.to(spans, {
+      yPercent: -100 * (spans.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".mp_item", // Même trigger que dans le composant Projects
+        scrub: 1,
+        snap: 1 / (spans.length - 1),
+        end: `+=${endValue}`,
+        markers: true, // À garder pour le débogage
       },
-      {
-        y: "30%",
-        x: "-50%",
-        ease: "power2.out",
-        duration: 2,
-        delay: 4,
-      }
-    );
-
-    gsap.to(".text-rotation", {
-      rotation: 360,
-      transformOrigin: "center center",
-      duration: 4,
-      delay: 3,
-      ease: "power2.out",
     });
   });
-
   return (
     <>
-      <div className="circle-text absolute bottom-0 w-64 h-64">
-        <svg viewBox="0 0 160 160">
-          <path
-            id="text-path"
-            fill="none"
-            d="M0 80 a 80 80 0 1 1 160 0 80 80 0 0 1 -160 0"
-          ></path>
-          <text
-            dy="12"
-            className="text-rotation text-sm fill-[#111111] tracking-[.20em]"
+      <div className="fixed bottom-12 left-12 font-['safiro'] z-30">
+        <div className="uppercase text-center p-5 flex flex-col items-center justify-between w-[12rem] h-[13rem] relative">
+          <span className="text-sm">Project</span>
+          <div>
+            <div className="text-[4rem] leading-[0.8] mr-[2.5rem] overflow-hidden">
+              <div className="w-20 h-[3.12rem] flex flex-col">
+                <span className="spanEl">0</span>
+                <span className="spanEl">1</span>
+                <span className="spanEl">2</span>
+                <span className="spanEl">3</span>
+              </div>
+            </div>
+            <span className="text-6xl leading-[0.8] block ml-[2.5rem]">3</span>
+          </div>
+          <span className="text-sm font-extralight">Number</span>
+          <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8rem] h-[1px] -rotate-45 border border-[#9696967b]"></span>
+          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden">
+            <svg
+              width="30"
+              height="17"
+              viewBox="0 0 30 17"
+              fill="none"
+              className="icon-svg w-full"
+            >
+              <path
+                className="stroke-current"
+                d="M8.54736 16.6364L1.38827 8.26321L7.83145 0.727323"
+              ></path>
+              <path
+                className="stroke-current"
+                d="M1.38817 8.28388L30.0245 8.28387"
+              ></path>
+            </svg>
+          </button>
+          <button
+            className="cta primary absolute right-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden"
+            aria-label="Next project"
           >
-            <textPath xlinkHref="#text-path">
-              let's work together let's work together let's work together
-            </textPath>
-          </text>
-          <circle cx="80" cy="80" r="60" fill="none"></circle>
-        </svg>
+            <svg
+              width="30"
+              height="17"
+              viewBox="0 0 30 17"
+              fill="none"
+              className="icon-svg w-full"
+            >
+              <path
+                className="stroke-current"
+                d="M21.7229 0.363708L28.882 8.73691L22.4388 16.2728"
+              ></path>
+              <path
+                className="stroke-current"
+                d="M28.8821 8.71619L0.245728 8.71619"
+              ></path>
+            </svg>
+          </button>
+          <svg
+            width="280"
+            height="280"
+            viewBox="0 0 280 280"
+            fill="none"
+            className="circle w-full h-full absolute left-0 top-0 z-[0] [stroke-dasharray:880]"
+          >
+            <circle
+              cx="140"
+              cy="140"
+              r="139.5"
+              className="stroke-[#9696967b]"
+            ></circle>
+            <circle
+              cx="140"
+              cy="140"
+              r="139.5"
+              className="stroke-black [stroke-dasharray:780]"
+            ></circle>
+          </svg>
+        </div>
       </div>
     </>
   );
