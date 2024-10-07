@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Projects() {
+export default function Main() {
   useGSAP(() => {
     let sections = gsap.utils.toArray(".pr_client");
     let endValue = window.innerHeight * sections.length; // La hauteur totale des sections
@@ -18,11 +18,13 @@ export default function Projects() {
         scrub: 1,
         snap: 1 / (sections.length - 1),
         end: `+=${endValue}`,
-        markers: true, // À garder pour le débogage, à retirer en production
         onUpdate: (self) => {
           const progress = self.progress.toFixed(2);
           gsap.to(".spanEl", {
             yPercent: -100 * progress * (sections.length - 1),
+          });
+          gsap.to(".circle-progress", {
+            strokeDashoffset: 880 - 880 * progress,
           });
         },
       },

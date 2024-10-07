@@ -1,13 +1,13 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Projects from "../components/Projects";
+import PageNumber from "../components/PageNumber";
+import Main from "../components/Main";
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <Projects />
-      <Footer />
+      <PageNumber />
+      <Main />
     </>
   );
 }

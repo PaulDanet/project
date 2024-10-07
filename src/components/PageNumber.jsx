@@ -4,22 +4,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Footer() {
-  useGSAP(() => {
-    let spans = gsap.utils.toArray(".spanEl");
-    let endValue = window.innerHeight; // Ajuster selon la hauteur du scroll
-    gsap.to(spans, {
-      yPercent: -100 * (spans.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".mp_item", // Même trigger que dans le composant Projects
-        scrub: 1,
-        snap: 1 / (spans.length - 1),
-        end: `+=${endValue}`,
-        markers: true, // À garder pour le débogage
-      },
-    });
-  });
+export default function PageNumber() {
+  useGSAP(() => {});
+
   return (
     <>
       <div className="fixed bottom-12 left-12 font-['safiro'] z-30">
@@ -82,19 +69,19 @@ export default function Footer() {
             height="280"
             viewBox="0 0 280 280"
             fill="none"
-            className="circle w-full h-full absolute left-0 top-0 z-[0] [stroke-dasharray:880]"
+            className="circle w-full h-full absolute left-0 top-0 z-[0]"
           >
             <circle
               cx="140"
               cy="140"
               r="139.5"
-              className="stroke-[#9696967b]"
+              className="stroke-[#9696967b] [stroke-dasharray:880]"
             ></circle>
             <circle
               cx="140"
               cy="140"
               r="139.5"
-              className="stroke-black [stroke-dasharray:780]"
+              className="circle-progress stroke-black [stroke-dasharray:880]  origin-center -rotate-[90deg]"
             ></circle>
           </svg>
         </div>
