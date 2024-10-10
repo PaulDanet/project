@@ -5,7 +5,46 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PageNumber() {
-  useGSAP(() => {});
+  useGSAP(() => {
+    gsap.fromTo(
+      ".circle-progress",
+      { strokeDashoffset: 880 },
+      {
+        strokeDashoffset: 0,
+        duration: 3,
+        ease: "power1.inOut",
+      }
+    );
+
+    gsap.to(".loadingText", {
+      innerHTML: 100,
+      snap: { innerHTML: 1 },
+      duration: 3,
+      ease: "power1.inOut",
+      onComplete: () => {
+        gsap.To(".loadingText", {
+          opacity: 1,
+        });
+      },
+    });
+
+    gsap.fromTo(
+      ".pageNumber",
+      {
+        y: "10vw",
+        clipPath: "inset(0 0 100% 0)",
+      },
+      {
+        y: "0vw",
+        clipPath: "inset(0 0 0% 0)",
+        opacity: 1,
+        duration: 1,
+        ease: "power.out",
+        stagger: 0.1,
+        delay: 2,
+      }
+    );
+  });
 
   return (
     <>
@@ -13,12 +52,13 @@ export default function PageNumber() {
         <div className="uppercase text-center p-5 flex flex-col items-center justify-between w-[12rem] h-[13rem] relative">
           <span className="text-sm">Project</span>
           <div>
+            <span className="relative loadingText">0</span>
             <div className="text-[4rem] leading-[0.8] mr-[2.5rem] overflow-hidden">
               <div className="w-20 h-[3.12rem] flex flex-col">
-                <span className="spanEl">0</span>
-                <span className="spanEl">1</span>
-                <span className="spanEl">2</span>
-                <span className="spanEl">3</span>
+                <span className="pageNumber">0</span>
+                <span className="pageNumber">1</span>
+                <span className="pageNumber">2</span>
+                <span className="pageNumber">3</span>
               </div>
             </div>
             <span className="text-6xl leading-[0.8] block ml-[2.5rem]">3</span>

@@ -9,18 +9,26 @@ export default function Main() {
     let sections = gsap.utils.toArray(".pr_client");
     let endValue = window.innerHeight * sections.length; // La hauteur totale des sections
 
+    // Animation main en intro
+    gsap.from(".main", {
+      x: "100%",
+      duration: 2,
+      delay: 5,
+      ease: "power.out",
+    });
+
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
-        trigger: ".mp_item",
+        trigger: ".main",
         pin: true,
         scrub: 1,
         snap: 1 / (sections.length - 1),
         end: `+=${endValue}`,
         onUpdate: (self) => {
           const progress = self.progress.toFixed(2);
-          gsap.to(".spanEl", {
+          gsap.to(".pageNumber", {
             yPercent: -100 * progress * (sections.length - 1),
           });
           gsap.to(".circle-progress", {
@@ -32,7 +40,7 @@ export default function Main() {
   });
   return (
     <>
-      <section className="mp_item flex w-full font-['safiro'] overflow-x-hidden">
+      <section className="main flex w-full font-['safiro'] overflow-x-hidden">
         <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
           <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
           SCROLL DOWN
