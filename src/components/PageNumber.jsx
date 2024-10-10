@@ -7,29 +7,40 @@ gsap.registerPlugin(ScrollTrigger);
 export default function PageNumber() {
   useGSAP(() => {
     gsap.fromTo(
+      ".separateNumber",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 7,
+      }
+    );
+
+    gsap.fromTo(
       ".circle-progress",
       { strokeDashoffset: 880 },
       {
         strokeDashoffset: 0,
-        duration: 3,
+        delay: 1,
+        duration: 2,
         ease: "power1.inOut",
       }
     );
 
-    gsap.to(".loadingText", {
+    gsap.to(".loadingNumber", {
       innerHTML: 100,
       snap: { innerHTML: 1 },
-      duration: 3,
+      delay: 1,
+      duration: 2,
       ease: "power1.inOut",
       onComplete: () => {
-        gsap.To(".loadingText", {
-          opacity: 1,
+        gsap.to(".loadingText", {
+          opacity: 0,
         });
       },
     });
 
     gsap.fromTo(
-      ".pageNumber",
+      ".pageNumberTop, .textTop",
       {
         y: "10vw",
         clipPath: "inset(0 0 100% 0)",
@@ -39,33 +50,85 @@ export default function PageNumber() {
         clipPath: "inset(0 0 0% 0)",
         opacity: 1,
         duration: 1,
+        delay: 8,
         ease: "power.out",
-        stagger: 0.1,
-        delay: 2,
+      }
+    );
+
+    gsap.fromTo(
+      ".pageNumberBottom, .textBottom",
+      {
+        y: "-10vw",
+        clipPath: "inset(100% 0 0 0)",
+      },
+      {
+        y: "0vw",
+        clipPath: "inset(0% 0 0 0)",
+        opacity: 1,
+        duration: 1,
+        delay: 8,
+        ease: "power.out",
+      }
+    );
+
+    gsap.fromTo(
+      ".arrowLeft",
+      {
+        x: "10vw",
+        clipPath: "inset(0 100% 0 0)",
+      },
+      {
+        x: "0vw",
+        clipPath: "inset(0 0% 0 0)",
+        opacity: 1,
+        duration: 1,
+        delay: 8,
+        ease: "power.out",
+      }
+    );
+
+    gsap.fromTo(
+      ".arrowRight",
+      {
+        x: "-10vw",
+        clipPath: "inset(0 0 0 100%)",
+      },
+      {
+        x: "0vw",
+        clipPath: "inset(0 0 0 0%)",
+        opacity: 1,
+        duration: 1,
+        delay: 8,
+        ease: "power.out",
       }
     );
   });
 
   return (
     <>
-      <div className="fixed bottom-12 left-12 font-['safiro'] z-30">
+      <div className="circlePageNumber fixed bottom-12 left-12 font-['safiro'] z-30">
+        <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-white ">
+          <span className="loadingNumber">0</span>
+          <span>%</span>
+        </div>
         <div className="uppercase text-center p-5 flex flex-col items-center justify-between w-[12rem] h-[13rem] relative">
-          <span className="text-sm">Project</span>
+          <span className="textTop text-sm">Page</span>
           <div>
-            <span className="relative loadingText">0</span>
             <div className="text-[4rem] leading-[0.8] mr-[2.5rem] overflow-hidden">
               <div className="w-20 h-[3.12rem] flex flex-col">
-                <span className="pageNumber">0</span>
-                <span className="pageNumber">1</span>
-                <span className="pageNumber">2</span>
-                <span className="pageNumber">3</span>
+                <span className="pageNumberTop">0</span>
+                <span className="pageNumberTop">1</span>
+                <span className="pageNumberTop">2</span>
+                <span className="pageNumberTop">3</span>
               </div>
             </div>
-            <span className="text-6xl leading-[0.8] block ml-[2.5rem]">3</span>
+            <span className="pageNumberBottom text-6xl leading-[0.8] block ml-[2.5rem]">
+              3
+            </span>
           </div>
-          <span className="text-sm font-extralight">Number</span>
-          <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8rem] h-[1px] -rotate-45 border border-[#9696967b]"></span>
-          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden">
+          <span className="textBottom text-sm font-extralight">Number</span>
+          <span className="separateNumber absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8rem] h-[1px] -rotate-45 border border-[#9696967b]"></span>
+          <button className="arrowLeft absolute left-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden">
             <svg
               width="30"
               height="17"
@@ -83,10 +146,7 @@ export default function PageNumber() {
               ></path>
             </svg>
           </button>
-          <button
-            className="cta primary absolute right-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden"
-            aria-label="Next project"
-          >
+          <button className="arrowRight absolute right-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden">
             <svg
               width="30"
               height="17"
@@ -121,7 +181,7 @@ export default function PageNumber() {
               cx="140"
               cy="140"
               r="139.5"
-              className="circle-progress stroke-black [stroke-dasharray:880]  origin-center -rotate-[90deg]"
+              className="circle-progress stroke-white [stroke-dasharray:880]  origin-center -rotate-[90deg]"
             ></circle>
           </svg>
         </div>

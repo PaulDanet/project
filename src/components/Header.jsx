@@ -17,7 +17,7 @@ export default function Header() {
     gsap.to(".color-bg", {
       height: "0vh",
       duration: 1,
-      delay: 1,
+      delay: 4,
       ease: "power3.in",
     });
 
@@ -27,7 +27,7 @@ export default function Header() {
       duration: 2,
       ease: "power.out",
       onComplete: () => {
-        gsap.to(".first-name, .last-name", { color: "#111111" });
+        gsap.to(".first-name, .last-name", { delay: 3, color: "#111111" });
       },
     });
 

@@ -28,7 +28,7 @@ export default function Main() {
         end: `+=${endValue}`,
         onUpdate: (self) => {
           const progress = self.progress.toFixed(2);
-          gsap.to(".pageNumber", {
+          gsap.to(".pageNumberTop", {
             yPercent: -100 * progress * (sections.length - 1),
           });
           gsap.to(".circle-progress", {
