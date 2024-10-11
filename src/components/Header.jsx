@@ -10,14 +10,14 @@ export default function Header() {
       strokeDashoffset: 0,
       duration: 1,
       ease: "power1.inOut",
-      delay: 3,
+      delay: 7,
     });
 
     // Animation de l'invasion de couleur
     gsap.to(".color-bg", {
       height: "0vh",
       duration: 1,
-      delay: 4,
+      delay: 3,
       ease: "power3.in",
     });
 
@@ -27,7 +27,7 @@ export default function Header() {
       duration: 2,
       ease: "power.out",
       onComplete: () => {
-        gsap.to(".first-name, .last-name", { delay: 3, color: "#111111" });
+        gsap.to(".first-name, .last-name", { delay: 2, color: "#111111" });
       },
     });
 
@@ -52,7 +52,7 @@ export default function Header() {
         duration: 1,
         ease: "power.out",
         stagger: 0.1,
-        delay: 2,
+        delay: 6,
       }
     );
 
@@ -69,7 +69,7 @@ export default function Header() {
         opacity: 1,
         duration: 1,
         ease: "power.out",
-        delay: 3,
+        delay: 7,
       }
     );
 
@@ -79,7 +79,7 @@ export default function Header() {
       clipPath: "inset(0 0 100% 0)",
       stagger: 0.03,
       ease: "power2.in",
-      delay: 4,
+      delay: 8,
     });
 
     // Animation des lettres du mot "Lorient" qui apparaissent
@@ -103,7 +103,7 @@ export default function Header() {
     gsap.to(".underline", {
       scaleX: 1,
       duration: 1,
-      delay: 4,
+      delay: 8,
       ease: "power2.in",
     });
 

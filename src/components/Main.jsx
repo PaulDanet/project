@@ -13,7 +13,7 @@ export default function Main() {
     gsap.from(".main", {
       x: "100%",
       duration: 2,
-      delay: 5,
+      delay: 4,
       ease: "power.out",
     });
 

@@ -11,7 +11,8 @@ export default function PageNumber() {
       { opacity: 0 },
       {
         opacity: 1,
-        delay: 7,
+        duration: 2,
+        delay: 4,
       }
     );
 
@@ -20,8 +21,7 @@ export default function PageNumber() {
       { strokeDashoffset: 880 },
       {
         strokeDashoffset: 0,
-        delay: 1,
-        duration: 2,
+        duration: 3,
         ease: "power1.inOut",
       }
     );
@@ -29,18 +29,18 @@ export default function PageNumber() {
     gsap.to(".loadingNumber", {
       innerHTML: 100,
       snap: { innerHTML: 1 },
-      delay: 1,
-      duration: 2,
+      duration: 3,
       ease: "power1.inOut",
       onComplete: () => {
         gsap.to(".loadingText", {
+          delay: 1,
           opacity: 0,
         });
       },
     });
 
     gsap.fromTo(
-      ".pageNumberTop, .textTop",
+      ".pageNumberTop",
       {
         y: "10vw",
         clipPath: "inset(0 0 100% 0)",
@@ -50,13 +50,43 @@ export default function PageNumber() {
         clipPath: "inset(0 0 0% 0)",
         opacity: 1,
         duration: 1,
-        delay: 8,
+        delay: 4,
         ease: "power.out",
       }
     );
 
     gsap.fromTo(
-      ".pageNumberBottom, .textBottom",
+      ".textTop",
+      {
+        y: "-1vw",
+        opacity: 0,
+      },
+      {
+        y: "0vw",
+        opacity: 1,
+        duration: 1,
+        delay: 4,
+        ease: "power.out",
+      }
+    );
+
+    gsap.fromTo(
+      ".textBottom",
+      {
+        y: "1vw",
+        opacity: 0,
+      },
+      {
+        y: "0vw",
+        opacity: 1,
+        duration: 1,
+        delay: 4,
+        ease: "power.out",
+      }
+    );
+
+    gsap.fromTo(
+      ".pageNumberBottom",
       {
         y: "-10vw",
         clipPath: "inset(100% 0 0 0)",
@@ -66,7 +96,7 @@ export default function PageNumber() {
         clipPath: "inset(0% 0 0 0)",
         opacity: 1,
         duration: 1,
-        delay: 8,
+        delay: 4,
         ease: "power.out",
       }
     );
@@ -74,15 +104,14 @@ export default function PageNumber() {
     gsap.fromTo(
       ".arrowLeft",
       {
-        x: "10vw",
-        clipPath: "inset(0 100% 0 0)",
+        x: "-1vw",
+        opacity: 0,
       },
       {
         x: "0vw",
-        clipPath: "inset(0 0% 0 0)",
         opacity: 1,
         duration: 1,
-        delay: 8,
+        delay: 4,
         ease: "power.out",
       }
     );
@@ -90,15 +119,14 @@ export default function PageNumber() {
     gsap.fromTo(
       ".arrowRight",
       {
-        x: "-10vw",
-        clipPath: "inset(0 0 0 100%)",
+        x: "1vw",
+        opacity: 0,
       },
       {
         x: "0vw",
-        clipPath: "inset(0 0 0 0%)",
         opacity: 1,
         duration: 1,
-        delay: 8,
+        delay: 4,
         ease: "power.out",
       }
     );
@@ -107,7 +135,7 @@ export default function PageNumber() {
   return (
     <>
       <div className="circlePageNumber fixed bottom-12 left-12 font-['safiro'] z-30">
-        <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-white ">
+        <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-[#f0f0f0] ">
           <span className="loadingNumber">0</span>
           <span>%</span>
         </div>
@@ -127,7 +155,7 @@ export default function PageNumber() {
             </span>
           </div>
           <span className="textBottom text-sm font-extralight">Number</span>
-          <span className="separateNumber absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8rem] h-[1px] -rotate-45 border border-[#9696967b]"></span>
+          <span className="separateNumber absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[8rem] h-[1px] -rotate-45 border border-[#9696963e]"></span>
           <button className="arrowLeft absolute left-0 top-1/2 transform -translate-y-1/2 w-16 z-[2] cursor-pointer overflow-hidden">
             <svg
               width="30"
@@ -181,7 +209,7 @@ export default function PageNumber() {
               cx="140"
               cy="140"
               r="139.5"
-              className="circle-progress stroke-white [stroke-dasharray:880]  origin-center -rotate-[90deg]"
+              className="circle-progress stroke-[#f0f0f0] [stroke-dasharray:880]  origin-center -rotate-[90deg]"
             ></circle>
           </svg>
         </div>
