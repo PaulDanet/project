@@ -38,24 +38,59 @@ export default function Main() {
       },
     });
   });
+
   return (
     <>
-      <section className="main flex w-full font-['safiro'] overflow-x-hidden">
-        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
-          <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
-          SCROLL DOWN
+      <section className="main flex w-full font-['safiro'] overflow-x-hidden z-30">
+        <div className="pr_client relative min-w-[100vw] h-[100vh]">
+          <div className="flex justify-around items-center h-[100vh]">
+            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
+            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
+            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
+          </div>
+          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
+            <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
+            SCROLL DOWN
+          </div>
         </div>
-        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
-          <span className="pr_num mb-16 text-lg tracking-normal">(02)</span>
-          ABOUT ME
+        <div className="pr_client relative min-w-[100vw] h-[100vh]">
+          <div className="flex flex-col justify-center items-center gap-4 h-[100vh]">
+            <div className="w-[90vw] h-[20vh] border border-black rounded-lg"></div>
+            <div className="w-[90vw] h-[20vh] border border-black rounded-lg"></div>
+          </div>
+          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
+            <span className="pr_num mb-16 text-lg tracking-normal">(02)</span>
+            ABOUT ME
+          </div>
         </div>
-        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
-          <span className="pr_num mb-16 text-lg tracking-normal">(03)</span>
-          TOOLBOX
+        <div className="pr_client relative min-w-[100vw] h-[100vh]">
+          <div className="flex justify-center items-center h-[100vh]">
+            <div className="w-[90vw] h-[44vh] border border-black rounded-lg"></div>
+          </div>
+          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
+            <span className="pr_num mb-16 text-lg tracking-normal">(03)</span>
+            TOOLBOX
+          </div>
         </div>
-        <div className="pr_client text-[6vw] leading-[6vw] uppercase tracking-[-.2vw] min-w-[100%] h-[100vh] flex justify-end items-end pb-12 pr-12 text-[#fe4534]">
-          <span className="pr_num mb-16 text-lg tracking-normal">(04)</span>
-          PROJECTS
+        <div className="pr_client relative min-w-[100vw] h-[100vh]">
+          <div className="flex justify-center items-center gap-4 h-[100vh]">
+            <div className="flex flex-col justify-center items-center gap-4">
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4">
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+            </div>
+            <div className="flex flex-col justify-center items-center gap-4">
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
+            </div>
+          </div>
+          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
+            <span className="pr_num mb-16 text-lg tracking-normal">(04)</span>
+            PROJECTS
+          </div>
         </div>
       </section>
     </>

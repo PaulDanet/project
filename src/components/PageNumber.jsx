@@ -23,8 +23,25 @@ export default function PageNumber() {
         strokeDashoffset: 0,
         duration: 3,
         ease: "power1.inOut",
+        onComplete: () => {
+          gsap.to(".circle-progress", {
+            delay: 1,
+            duration: 2,
+            strokeDashoffset: 880,
+            ease: "power.out",
+          });
+          gsap.to(".circle-progress", {
+            delay: 1,
+            stroke: "#111111",
+          });
+        },
       }
     );
+
+    gsap.to(".circlePageNumber", {
+      delay: 3,
+      backgroundColor: "#f0f0f0",
+    });
 
     gsap.to(".loadingNumber", {
       innerHTML: 100,
@@ -134,8 +151,8 @@ export default function PageNumber() {
 
   return (
     <>
-      <div className="circlePageNumber fixed bottom-12 left-12 font-['safiro'] z-30">
-        <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-[#f0f0f0] ">
+      <div className="circlePageNumber fixed bottom-8 left-0 pl-12 pr-2 font-['safiro'] bg-transparent z-40">
+        <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-[#f0f0f0] pl-12">
           <span className="loadingNumber">0</span>
           <span>%</span>
         </div>
