@@ -1,15 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AboutMe from "./AboutMe";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Main() {
   useGSAP(() => {
     let sections = gsap.utils.toArray(".pr_client");
-    let endValue = window.innerHeight * sections.length; // La hauteur totale des sections
+    let endValue = window.innerHeight * sections.length;
 
-    // Animation main en intro
     gsap.from(".main", {
       x: "100%",
       duration: 2,
@@ -44,9 +44,9 @@ export default function Main() {
       <section className="main flex w-full font-['safiro'] overflow-x-hidden z-30">
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
           <div className="flex justify-around items-center h-[100vh]">
-            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
-            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
-            <div className="w-[30vw] h-[40vh] border border-black rounded-lg"></div>
+            <div className="w-[45vw] h-[30vh]">
+              <AboutMe />
+            </div>
           </div>
           <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
             <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
