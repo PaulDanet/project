@@ -43,8 +43,8 @@ export default function Main() {
     <>
       <section className="main flex w-full font-['safiro'] overflow-x-hidden z-30">
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
-          <div className="flex justify-around items-center h-[100vh]">
-            <div className="w-[45vw] h-[30vh]">
+          <div className="flex justify-center items-center h-[100vh]">
+            <div className="w-1/2">
               <AboutMe />
             </div>
           </div>
