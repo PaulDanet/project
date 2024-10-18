@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutMe from "./AboutMe";
+import ScrollDown from "./ScrollDown";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,11 +42,11 @@ export default function Main() {
 
   return (
     <>
-      <section className="main flex w-full font-['safiro'] overflow-x-hidden z-30">
+      <section className="main flex w-full font-roboto overflow-x-hidden z-30">
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
           <div className="flex justify-center items-center h-[100vh]">
-            <div className="w-1/2">
-              <AboutMe />
+            <div className="w-[90vw] h-[44vh] flex justify-start items-center font-thin">
+              <ScrollDown />
             </div>
           </div>
           <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
@@ -54,9 +55,10 @@ export default function Main() {
           </div>
         </div>
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
-          <div className="flex flex-col justify-center items-center gap-4 h-[100vh]">
-            <div className="w-[90vw] h-[20vh] border border-black rounded-lg"></div>
-            <div className="w-[90vw] h-[20vh] border border-black rounded-lg"></div>
+          <div className="flex justify-center items-center h-[100vh]">
+            <div className="w-1/2">
+              <AboutMe />
+            </div>
           </div>
           <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
             <span className="pr_num mb-16 text-lg tracking-normal">(02)</span>

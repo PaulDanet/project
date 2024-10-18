@@ -135,7 +135,7 @@ export default function Header() {
   return (
     <>
       <div className="color-bg absolute top-0 left-0 w-screen h-screen bg-[#111111] -z-10"></div>
-      <div className="intro-section fixed font-['canela'] text-5xl leading-normal font-extralight z-20 pt-8 pl-12">
+      <div className="intro-section fixed font-roboto text-5xl leading-normal font-thin z-80 pt-8 pl-12">
         <div>
           <span className="intro-word mr-1.5">Web </span>
           <span className="intro-word mr-1.5">Developer </span>

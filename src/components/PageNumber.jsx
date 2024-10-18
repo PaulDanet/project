@@ -38,11 +38,6 @@ export default function PageNumber() {
       }
     );
 
-    gsap.to(".circlePageNumber", {
-      delay: 3,
-      backgroundColor: "#f0f0f0",
-    });
-
     gsap.to(".loadingNumber", {
       innerHTML: 100,
       snap: { innerHTML: 1 },
@@ -151,7 +146,7 @@ export default function PageNumber() {
 
   return (
     <>
-      <div className="circlePageNumber fixed bottom-8 left-0 pl-12 pr-2 font-['safiro'] bg-transparent z-40">
+      <div className="circlePageNumber fixed bottom-8 left-0 pl-12 pr-2 font-roboto bg-transparent z-40">
         <div className="loadingText absolute w-full flex justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[4rem] text-[#f0f0f0] pl-12">
           <span className="loadingNumber">0</span>
           <span>%</span>
