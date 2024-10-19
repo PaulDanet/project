@@ -7,7 +7,11 @@
 body {
   margin: auto;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-image: url("src/assets/3d-background-with-white-cubes.jpg"); /* Remplacez par le chemin de votre image */
+  background-size: cover; /* Pour s'assurer que l'image couvre toute la surface */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-attachment: fixed;
   color: #111111;
 }
 

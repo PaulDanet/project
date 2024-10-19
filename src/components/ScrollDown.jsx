@@ -11,6 +11,13 @@ export default function ScrollDown() {
     "🥷 React Ninja",
   ]; // Liste des mots
   useGSAP(() => {
+    gsap.from(".welcomeText", {
+      x: "-150%",
+      delay: 9,
+      duration: 2,
+      ease: "power.out",
+    });
+
     gsap.to(".cursor", {
       opacity: 0,
       repeat: -1,
@@ -30,7 +37,7 @@ export default function ScrollDown() {
 
   return (
     <>
-      <div className="text-[3.75rem]">
+      <div className="welcomeText text-[3.75rem]">
         <div>
           <span>Welcome</span>
         </div>

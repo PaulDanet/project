@@ -1,9 +1,9 @@
-import ScrollDown from "../components/ScrollDown";
+import ToolBox from "../components/ToolBox";
 
 export default function Test() {
   return (
     <>
-      <ScrollDown />
+      <ToolBox />
     </>
   );
 }
