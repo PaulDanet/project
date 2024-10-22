@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutMe from "./AboutMe";
 import ScrollDown from "./ScrollDown";
+import ToolBox from "./ToolBox";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,7 @@ export default function Main() {
         </div>
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
           <div className="flex justify-center items-center h-[100vh]">
-            <div className="w-1/2">
+            <div className="w-full">
               <AboutMe />
             </div>
           </div>
@@ -66,8 +67,10 @@ export default function Main() {
           </div>
         </div>
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
-          <div className="flex justify-center items-center h-[100vh]">
-            <div className="w-[90vw] h-[44vh] border border-black rounded-lg"></div>
+          <div className="flex justify-center items-end h-[100vh]">
+            <div className="w-[100vw] h-[55vh]">
+              <ToolBox />
+            </div>
           </div>
           <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
             <span className="pr_num mb-16 text-lg tracking-normal">(03)</span>
