@@ -136,18 +136,18 @@ export default function Header() {
   return (
     <>
       <div className="color-bg absolute top-0 left-0 w-screen h-screen bg-[#111111] -z-10"></div>
-      <div className="fixed w-full flex justify-between items-center z-80 pt-8 pl-12 pr-12">
-        <div className="intro-section font-['canela'] text-5xl leading-normal">
+      <div className="fixed w-full flex justify-between items-center z-80 lg:pt-8 lg:pl-12 lg:pr-12 pt-4 pl-6 pr-6">
+        <div className="intro-section font-['canela'] lg:text-5xl md:text-4xl text-xl">
           <div>
-            <span className="intro-word mr-1.5">Web </span>
-            <span className="intro-word mr-1.5">Developer </span>
-            <span className="intro-word mr-1.5">Available </span>
-            <span className="intro-word mr-1.5">for </span>
+            <span className="intro-word mr-1.5 md:mb-4">Web </span>
+            <span className="intro-word mr-1.5 md:mb-4">Developer </span>
+            <span className="intro-word mr-1.5 md:mb-4">Available </span>
+            <span className="intro-word mr-1.5 md:mb-4">for </span>
             <div className="relative inline-block">
-              <span className="intro-word mr-1.5">your </span>
-              <span className="intro-word mr-1.5">Project</span>
+              <span className="intro-word mr-1.5 md:mb-4">your </span>
+              <span className="intro-word mr-1.5 md:mb-4">Project</span>
               <svg
-                className="circle-svg absolute -top-2 -left-1.5 stroke-[#111111] z-10 w-[110%] h-[110%] [filter: url(#fuzzy)] [stroke-dasharray:1259] [stroke-dashoffset:1259]"
+                className="circle-svg absolute md:-top-4 md:-left-1.5 -top-1.5 -left-1 stroke-[#111111] z-10 w-[110%] h-[110%] [filter: url(#fuzzy)] [stroke-dasharray:1259] [stroke-dashoffset:1259]"
                 fill="none"
                 viewBox="0 0 350 80"
               >
@@ -156,10 +156,10 @@ export default function Header() {
             </div>
           </div>
           <div className="flex">
-            <span className="intro-word mr-1.5">Made </span>
-            <span className="intro-word mr-1.5">In </span>
+            <span className="intro-word mr-1.5 md:mb-4">Made </span>
+            <span className="intro-word mr-1.5 md:mb-4">In </span>
             <div className="relative">
-              <div className="brittany-letters flex absolute top-0 left-0 w-full">
+              <div className="brittany-letters flex absolute top-0 left-0 w-full md:mb-4">
                 <span className="letter">B</span>
                 <span className="letter">r</span>
                 <span className="letter">i</span>
@@ -169,7 +169,7 @@ export default function Header() {
                 <span className="letter">n</span>
                 <span className="letter">y</span>
               </div>
-              <div className="lorient-letters flex absolute top-0 left-0 w-full">
+              <div className="lorient-letters flex absolute top-0 left-0 w-full md:mb-4">
                 <span className="letter">L</span>
                 <span className="letter">o</span>
                 <span className="letter">r</span>

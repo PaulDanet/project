@@ -95,20 +95,29 @@ export default function DateOfTheDay() {
   return (
     <>
       <div className="font-['safiro'] flex justify-end ">
-        <span className="intro-date text-9xl" id="first-digit">
+        <span
+          className="intro-date lg:text-9xl md:text-8xl text-7xl"
+          id="first-digit"
+        >
           0
         </span>
-        <span className="intro-date text-9xl" id="second-digit">
+        <span
+          className="intro-date lg:text-9xl md:text-8xl text-7xl"
+          id="second-digit"
+        >
           0
         </span>
         <div className="flex flex-col justify-center">
-          <span className="intro-date text-2xl" id="month">
+          <span
+            className="intro-date lg:text-2xl md:text-xl text-lg"
+            id="month"
+          >
             Jan
           </span>
-          <span className="intro-date font-roboto font-extralight">
+          <span className="intro-date font-roboto font-extralight lg:text-base text-sm">
             available
           </span>
-          <span className="intro-date font-roboto font-extralight -mt-2">
+          <span className="intro-date font-roboto font-extralight lg:text-base text-sm -mt-2">
             for work
           </span>
         </div>

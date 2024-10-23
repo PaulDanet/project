@@ -37,7 +37,7 @@ export default function ScrollDown() {
 
   return (
     <>
-      <div className="welcomeText text-[3.75rem]">
+      <div className="welcomeText lg:text-6xl md:text-4xl text-2xl">
         <div>
           <span>Welcome</span>
         </div>

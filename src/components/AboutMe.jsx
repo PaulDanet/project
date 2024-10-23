@@ -19,14 +19,16 @@ export default function AboutMe() {
       <div className="draggable-container relative w-full h-screen flex items-center justify-center overflow-hidden">
         <img
           src="src/assets/profile-pic (2).png"
-          className="w-1/4 draggable absolute"
+          className="w-auto h-[20vh] draggable absolute"
           alt="Profile"
         />
-        <div className="w-[20vw] h-[20vh] bg-[#ff7b00] rounded-lg draggable absolute"></div>
-        <div className="w-[20vw] h-[20vh] bg-[#009a43] rounded-lg draggable absolute"></div>
-        <div className="w-[20vw] h-[20vh] bg-[#8800ff] rounded-lg draggable absolute"></div>
-        <div className="w-[20vw] h-[20vh] bg-[#ffc800] rounded-lg draggable absolute"></div>
-        <div className="w-[20vw] h-[20vh] bg-white border-8 border-[#005eff] rounded-lg draggable absolute"></div>
+        <div className="w-52 h-52 bg-[#ff7b00] rounded-lg draggable absolute"></div>
+        <div className="h-52 w-96 bg-[#009a43] rounded-lg draggable absolute"></div>
+        <div className="h-52 w-52 bg-[#8800ff] rounded-lg draggable absolute"></div>
+        <div className="h-80 w-80 bg-[#ffc800] rounded-full draggable absolute"></div>
+        <div className="h-52 w-52 bg-white border-8 border-[#005eff] rounded-lg draggable absolute"></div>
+        <div className="h-52 w-96 bg-[#ff8888] rounded-lg draggable absolute"></div>
+        <div className="h-52 w-52 bg-white border-8 border-[#dbdada] rounded-lg draggable absolute"></div>
       </div>
     </>
   );

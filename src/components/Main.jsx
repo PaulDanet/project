@@ -50,8 +50,10 @@ export default function Main() {
               <ScrollDown />
             </div>
           </div>
-          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
-            <span className="pr_num mb-16 text-lg tracking-normal">(01)</span>
+          <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">
+            <span className="pr_num mb-8 text-sm md:mb-10 md:text-base lg:mb-16 lg:text-lg">
+              (01)
+            </span>
             SCROLL DOWN
           </div>
         </div>
@@ -61,8 +63,10 @@ export default function Main() {
               <AboutMe />
             </div>
           </div>
-          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
-            <span className="pr_num mb-16 text-lg tracking-normal">(02)</span>
+          <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">
+            <span className="pr_num mb-8 text-sm md:mb-10 md:text-base lg:mb-16 lg:text-lg">
+              (02)
+            </span>
             ABOUT ME
           </div>
         </div>
@@ -72,8 +76,10 @@ export default function Main() {
               <ToolBox />
             </div>
           </div>
-          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
-            <span className="pr_num mb-16 text-lg tracking-normal">(03)</span>
+          <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">
+            <span className="pr_num mb-8 text-sm md:mb-10 md:text-base lg:mb-16 lg:text-lg">
+              (03)
+            </span>
             TOOLBOX
           </div>
         </div>
@@ -92,8 +98,10 @@ export default function Main() {
               <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
             </div>
           </div>
-          <div className=" absolute text-[3.75rem] leading-[3.75rem] uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-8 pr-12 text-[#fe4534]">
-            <span className="pr_num mb-16 text-lg tracking-normal">(04)</span>
+          <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">
+            <span className="pr_num mb-8 text-sm md:mb-10 md:text-base lg:mb-16 lg:text-lg">
+              (04)
+            </span>
             PROJECTS
           </div>
         </div>
