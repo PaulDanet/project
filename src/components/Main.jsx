@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutMe from "./AboutMe";
 import ScrollDown from "./ScrollDown";
 import ToolBox from "./ToolBox";
+import Projects from "./Projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,18 +86,7 @@ export default function Main() {
         </div>
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
           <div className="flex justify-center items-center gap-4 h-[100vh]">
-            <div className="flex flex-col justify-center items-center gap-4">
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-4">
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-            </div>
-            <div className="flex flex-col justify-center items-center gap-4">
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-              <div className="w-[25vw] h-[20vh] border border-black rounded-lg"></div>
-            </div>
+            <Projects />
           </div>
           <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">
             <span className="pr_num mb-8 text-sm md:mb-10 md:text-base lg:mb-16 lg:text-lg">

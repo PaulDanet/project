@@ -1,9 +1,9 @@
-import ToolBox from "../components/ToolBox";
+import Projects from "../components/Projects";
 
 export default function Test() {
   return (
     <>
-      <ToolBox />
+      <Projects />
     </>
   );
 }
