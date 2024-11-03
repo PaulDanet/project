@@ -5,10 +5,30 @@ import AboutMe from "./AboutMe";
 import ScrollDown from "./ScrollDown";
 import ToolBox from "./ToolBox";
 import Projects from "./Projects";
+import IphoneFolder from "./iphoneFolder";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Main() {
+  const devOps = [
+    {
+      name: "HTML5",
+      link: "src/assets/html5.png",
+    },
+    {
+      name: "CSS3",
+      link: "src/assets/css3.png",
+    },
+    {
+      name: "JavaScript",
+      link: "src/assets/js.png",
+    },
+    {
+      name: "TypeScript",
+      link: "src/assets/TS.png",
+    },
+  ];
+
   useGSAP(() => {
     let sections = gsap.utils.toArray(".pr_client");
     let endValue = window.innerHeight * sections.length;
@@ -73,8 +93,16 @@ export default function Main() {
         </div>
         <div className="pr_client relative min-w-[100vw] h-[100vh]">
           <div className="flex justify-center items-end h-[100vh]">
-            <div className="w-[100vw] h-[55vh]">
-              <ToolBox />
+            <div className="w-[100vw] h-[100vh] flex flex-col justify-center gap-6">
+              <div className="flex justify-around">
+                <IphoneFolder appList={devOps} title={"FrontEnd"} />
+                <IphoneFolder appList={devOps} title={"FrontEnd"} />
+                <IphoneFolder appList={devOps} title={"FrontEnd"} />
+                <IphoneFolder appList={devOps} title={"FrontEnd"} />
+              </div>
+              <div className="">
+                <ToolBox />
+              </div>
             </div>
           </div>
           <div className="absolute lg:text-6xl md:text-4xl text-2xl uppercase tracking-[-0.125rem] flex justify-end items-end bottom-0 right-0 pb-4 pr-6 lg:pb-8 lg:pr-12 text-[#fe4534]">

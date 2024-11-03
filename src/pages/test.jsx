@@ -1,9 +1,9 @@
-import Projects from "../components/Projects";
+import IphoneFolder from "../components/iphoneFolder";
 
 export default function Test() {
   return (
     <>
-      <Projects />
+      <IphoneFolder />
     </>
   );
 }

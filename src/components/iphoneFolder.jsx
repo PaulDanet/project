@@ -1,27 +1,36 @@
 import React, { useState, useRef } from "react";
 import { gsap } from "gsap";
 
-const IphoneFolder = () => {
+const IphoneFolder = ({ appList, title }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Références pour chaque élément à animer
   const folderRef = useRef(null);
-  const backdropRef = useRef(null);
+  const titleTopRef = useRef(null);
+  const titleBottomRef = useRef(null);
+  const blurBackgroundRef = useRef(null);
 
   const openFolder = () => {
     gsap.to(folderRef.current, {
-      duration: 0.5,
-      scale: 1.5, // Agrandir la taille du dossier
-      top: "50%", // Centrer verticalement
-      left: "50%", // Centrer horizontalement
-      x: "-50%", // Réajustement pour centrer parfaitement
-      y: "-50%",
-      ease: "power2.out",
+      duration: 0.4,
+      scale: 2,
+      ease: "linear",
+      transformOrigin: "center center",
     });
 
-    // Appliquer un flou à l'arrière-plan
-    gsap.to(backdropRef.current, {
-      duration: 0.5,
-      backdropFilter: "blur(10px)",
-      ease: "power2.out",
+    gsap.to(titleTopRef.current, {
+      opacity: 1,
+      duration: 0.4,
+    });
+
+    gsap.to(titleBottomRef.current, {
+      opacity: 0,
+    });
+
+    gsap.to(blurBackgroundRef.current, {
+      duration: 0.4,
+      backdropFilter: "blur(8px)",
+      ease: "linear",
     });
 
     setIsOpen(true);
@@ -29,57 +38,70 @@ const IphoneFolder = () => {
 
   const closeFolder = () => {
     gsap.to(folderRef.current, {
-      duration: 0.5,
-      scale: 1, // Revenir à la taille normale
-      top: "initial",
-      left: "initial",
-      x: "0%",
-      y: "0%",
-      ease: "power2.out",
+      duration: 0.4,
+      scale: 1,
+      ease: "linear",
     });
 
-    gsap.to(backdropRef.current, {
-      duration: 0.5,
+    gsap.to(titleTopRef.current, {
+      opacity: 0,
+      duration: 0.4,
+    });
+
+    gsap.to(titleBottomRef.current, {
+      opacity: 1,
+      delay: 0.4,
+      duration: 0.4,
+    });
+
+    gsap.to(blurBackgroundRef.current, {
+      duration: 0.4,
       backdropFilter: "blur(0px)",
-      ease: "power2.out",
+      ease: "linear",
     });
 
     setIsOpen(false);
   };
 
   return (
-    <div className="relative h-screen bg-gray-200 flex justify-center items-center">
-      {/* Arrière-plan */}
+    <div className="flex flex-col justify-center items-center gap-2">
       <div
-        ref={backdropRef}
-        className={`absolute inset-0 transition-all ${
-          isOpen ? "pointer-events-none" : ""
-        }`}
-      />
-
-      {/* Le Dossier */}
+        ref={titleTopRef}
+        className="opacity-0 absolute top-0 text-4xl text-black z-50"
+      >
+        {title}
+      </div>
+      <div ref={blurBackgroundRef} className="absolute inset-0" />
       <div
         ref={folderRef}
         onClick={isOpen ? closeFolder : openFolder}
-        className="bg-white p-4 rounded-lg shadow-lg cursor-pointer transition-all transform"
+        className="bg-white/50 p-4 rounded-2xl shadow-lg cursor-pointer min-h-36 w-auto z-50"
       >
-        <h3 className="text-center font-semibold">Dossier d'apps</h3>
-        {!isOpen && (
-          <p className="text-center text-gray-500">Clique pour ouvrir</p>
-        )}
-        {isOpen && (
-          <div className="mt-4">
-            {/* Les icônes d'applications */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-gray-300 p-2 rounded-md">App 1</div>
-              <div className="bg-gray-300 p-2 rounded-md">App 2</div>
-              <div className="bg-gray-300 p-2 rounded-md">App 3</div>
-              <div className="bg-gray-300 p-2 rounded-md">App 4</div>
-              <div className="bg-gray-300 p-2 rounded-md">App 5</div>
-              <div className="bg-gray-300 p-2 rounded-md">App 6</div>
-            </div>
+        <div className={isOpen ? "m-4" : "m-0"}>
+          <div
+            className={`grid grid-cols-3 grid-rows-3 transition-all duration-300 ${
+              isOpen ? "gap-y-4 gap-x-8" : "gap-2"
+            }`}
+          >
+            {appList.map((app, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <img
+                  src={app.link}
+                  alt={app.name}
+                  className={`bg-white flex items-center justify-center shadow-md transition-all duration-300 ${
+                    isOpen ? "w-16 h-16 rounded-xl" : "w-8 h-8 rounded-md"
+                  }`}
+                />
+                <div className={isOpen ? "text-xs text-black mt-2" : "hidden"}>
+                  {app.name}
+                </div>
+              </div>
+            ))}
           </div>
-        )}
+        </div>
+      </div>
+      <div ref={titleBottomRef} className="text-lg text-black">
+        {title}
       </div>
     </div>
   );
